@@ -1,6 +1,6 @@
 <?php
 // header
-
+// modif sur les échappement sur les ' -> \'
 	$lang['installer'] = 'Installer';
 	$lang['Welcome'] = 'accueil';
 	$lang['Install'] = 'Installez';
