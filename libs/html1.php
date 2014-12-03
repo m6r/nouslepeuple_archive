@@ -642,7 +642,7 @@ function generateHash($plainText, $salt = null)
 {
     if ($salt === null)
     {
-        $salt = substr(hash('sha512',uniqid(rand(), true)), 0, SALT_LENGTH);
+        $salt = substr(md5(uniqid(rand(), true)), 0, SALT_LENGTH);
     }
     else
     {

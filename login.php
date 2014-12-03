@@ -111,7 +111,7 @@ if( (isset($_POST["processlogin"]) && is_numeric($_POST["processlogin"])) || (is
 			$user = $db->get_row("SELECT * FROM `" . table_users . "` where `user_email` = '".$email."' AND user_level!='Spammer'");
 			if($user){
 				$username = $user->user_login;
-                                $salt = substr(hash('sha512',uniqid(rand(), true)), 0, SALT_LENGTH);
+                                $salt = substr(md5(uniqid(rand(), true)), 0, SALT_LENGTH);
                                 $saltedlogin = generateHash($user->user_login);
 	
 				$to = $user->user_email;
