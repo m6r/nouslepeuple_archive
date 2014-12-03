@@ -9,6 +9,7 @@ include(mnminclude.'link.php');
 include(mnminclude.'smartyvariables.php');
 
 // breadcrumbs and page title
+
 $navwhere['text1'] = $main_smarty->get_config_vars('PLIGG_Visual_Breadcrumb_Login');
 $navwhere['link1'] = getmyurl('loginNoVar', '');
 $main_smarty->assign('navbar_where', $navwhere);
@@ -110,8 +111,8 @@ if( (isset($_POST["processlogin"]) && is_numeric($_POST["processlogin"])) || (is
 			$user = $db->get_row("SELECT * FROM `" . table_users . "` where `user_email` = '".$email."' AND user_level!='Spammer'");
 			if($user){
 				$username = $user->user_login;
-				$salt = substr(md5(uniqid(rand(), true)), 0, SALT_LENGTH);
-				$saltedlogin = generateHash($user->user_login);
+                                $salt = substr(md5(uniqid(rand(), true)), 0, SALT_LENGTH);
+                                $saltedlogin = generateHash($user->user_login);
 	
 				$to = $user->user_email;
 				$subject = $main_smarty->get_config_vars("PLIGG_Visual_Name").' '.$main_smarty->get_config_vars("PLIGG_PassEmail_Subject");

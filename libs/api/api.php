@@ -1,6 +1,7 @@
 <?php
 	/*
 	############### About  ###################
+         * 
 	Script name : Pligg API (mini)
 	Version : 0.1 
 	Developer : Thawatchai Fhaipolsan (powerpc)
@@ -102,20 +103,18 @@
 			}
 		}
 	}
-
-	function generateHash($plainText, $salt = null)
-	{
-		if ($salt === null)
-		{
-			$salt = substr(md5(uniqid(rand(), true)), 0, 9);
-		}
-		else
-		{
-			$salt = substr($salt, 0, 9);
-		}
-	
-		return $salt . sha1($salt . $plainText);
-	} 
+        function generateHash($plainText, $salt = null)
+        {
+            if ($salt === null)
+            {
+                $salt = substr(md5(uniqid(rand(), true)), 0, 9);
+            }
+            else
+            {
+                $salt = substr($salt, 0, 9);
+            }
+            return $salt . hash('sha512',$salt . $plainText);
+        }
 
 	function is_valid_url ( $url )
 	{
