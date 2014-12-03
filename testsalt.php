@@ -1,6 +1,5 @@
 <!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+générateur de hash sur password
 -->
 <!DOCTYPE html>
 <html>
@@ -15,7 +14,7 @@ and open the template in the editor.
             {
                 if ($salt === null)
                 {
-                    $salt = substr(hash('sha512',uniqid(rand(), true)), 0, SALT_LENGTH);
+                    $salt = substr(md5(uniqid(rand(), true)), 0, SALT_LENGTH);
                 }
                 else
                 {
