@@ -646,7 +646,6 @@ function generateHash_old($plainText, $salt = null){
     return $salt . sha1($salt . $plainText);
 }
 
-
 function generateHash($plainText, $salt = null)
 {
     if ($salt === null)

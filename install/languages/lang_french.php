@@ -1,5 +1,6 @@
 <?php
 // header
+
 	$lang['installer'] = 'Installer';
 	$lang['Welcome'] = 'accueil';
 	$lang['Install'] = 'Installez';

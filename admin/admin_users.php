@@ -415,6 +415,7 @@ if($canIhaveAccess == 1)
 					$subject = $main_smarty->get_config_vars("PLIGG_Visual_Name").' '.$main_smarty->get_config_vars("PLIGG_PassEmail_Subject");
 
 					//$password = substr(md5(uniqid(rand(), true)),0,SALT_LENGTH);
+                                        
                                         $password = substr(hash('sha512',uniqid(rand(), true)), 0, SALT_LENGTH);
 					$saltedPass = generateHash($password);
 					$db->query('UPDATE `' . table_users . "` SET `user_pass` = '$saltedPass' WHERE `user_login` = '".sanitize($_GET["user"], 3)."'");
