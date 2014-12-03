@@ -107,7 +107,7 @@
         {
             if ($salt === null)
             {
-                $salt = substr(hash('sha512',uniqid(rand(), true).microtime()), 0, 9);
+                $salt = substr(hash('sha512',uniqid(rand(), true)), 0, 9);
             }
             else
             {
