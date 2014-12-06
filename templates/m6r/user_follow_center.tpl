@@ -83,8 +83,8 @@
 					<table class="table table-bordered table-striped vertical-align">
 						<thead class="table_title">
 							<tr>
-								<th>Group Name</th>
-								<th style="width:60px;text-align:center;">Members</th>
+								<th>{#PLIGG_Groups_Name#}</th>
+								<th style="width:60px;text-align:center;">{#PLIGG_Groups_Members#}</th>
 							</tr>
 						<tbody>
 							{if $group_display eq ''}
