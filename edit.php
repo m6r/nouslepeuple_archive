@@ -23,7 +23,7 @@ if(is_numeric($_GET['id'])) {
 	$commentownerid = $comments->comment_user_id;
 	$commentowner = $db->get_var("SELECT user_login FROM " . table_users . " WHERE user_id = ". $commentownerid);
 
-	if (isset($_POST['process']) && sanitize($_POST['process'], 3) =='newcomment') {
+	if (isset($_POST['process']) && sanitize($_POST['process'], 3) == $main_smarty->get_config_vars("PLIGG_Visual_EditStory_Empty")) {
 		insert_comment();
 	}
 	// Set globals
