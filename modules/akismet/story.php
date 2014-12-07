@@ -57,7 +57,7 @@ if(is_numeric($requestID)) {
 		die();
 	}
 	if(isset($_POST['process']) && sanitize($_POST['process'], 3) != ''){
-		if (sanitize($_POST['process'], 3)=='newcomment') {
+		if (sanitize($_POST['process'], 3)== $main_smarty->get_config_vars("PLIGG_Visual_EditStory_Empty")) {
 		
 			$vars = array('user_id' => $link->author,'link_id' => $link->id);
 			check_actions('comment_subscription', $vars);

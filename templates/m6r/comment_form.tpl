@@ -21,7 +21,7 @@
 		{/if}
 		{checkActionsTpl location="tpl_pligg_story_comments_submit_end"}
 		<div class="form-actions">
-			<input type="hidden" name="process" value="newcomment" />
+			<input type="hidden" name="process" value={#PLIGG_Visual_EditStory_Empty#} />
 			<input type="hidden" name="randkey" value="{$randkey}" />
 			<input type="hidden" name="link_id" value="{$link_id}" />
 			<input type="hidden" name="user_id" value="{$user_id}" />
