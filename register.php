@@ -72,7 +72,7 @@ if($pligg_regfrom != ''){
 	$error = register_check_errors($username, $email, $password, $password2, $user_nom, $user_prenom, $user_datenaissance, $user_genre, $user_numerosecu, $user_codepostal);
 
 	if($error == false){
-		register_add_user($username, $email, $password, $password2, $user_language, $user_nom, $user_prenom, $user_datenaissance, $user_genre, $user_numerosecu, $user_codepostal, $user_ville, $user_pays);
+		register_add_user($username, $email, $password, $password2, $user_language, $user_nom, $user_prenom, $user_datenaissance, $user_genre, $user_numerosecu, $user_codepostal, $user_ville);
 	} else {
 //		print "Error";
 		print_r($form_email_error);
@@ -98,7 +98,7 @@ $main_smarty->display($the_template . '/pligg.tpl');
 
 die();
 
-function register_check_errors($username, $email, $password, $password2, $user_nom, $user_prenom, $user_datenaissance, $user_genre, $user_numerosecu, $user_codepostal,$user_pays){
+function register_check_errors($username, $email, $password, $password2, $user_nom, $user_prenom, $user_datenaissance, $user_genre, $user_numerosecu, $user_codepostal){
 
 	global $main_smarty;
 
@@ -193,7 +193,7 @@ function register_check_errors($username, $email, $password, $password2, $user_n
         }
          //numero sécu
  	if(!isset($user_numerosecu) || strlen($user_numerosecu) != 15 || substr($user_numerosecu, 3,2)!= $mois) { // if no secu mois differant mois de naissance 
-		$form_numerosecu_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_NumSecuInvalid')."pays=".$user_pays;
+		$form_numerosecu_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_NumSecuInvalid');
 		$error = true;
 	}
         
