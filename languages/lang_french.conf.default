@@ -113,6 +113,7 @@ PLIGG_Visual_Register_Error_UserTooShort = "Le pseudo doit faire au moins trois 
 PLIGG_Visual_Register_Error_NomTooShort = "Le nom d'utilisateur doit faire au moins trois caractères"
 PLIGG_Visual_Register_Error_NomomInvalid = "Votre nom d'utilisateur utilise des caractères invalides."
 PLIGG_Visual_Register_Error_PrenomTooShort = "Le prenom d'utilisateur doit faire au moins trois caractères"
+
 PLIGG_Visual_Register_Error_PrenomInvalid = "Votre prenom d'utilisateur utilise des caractères invalides."
 PLIGG_Visual_Register_Error_DateInvalid = "Date de naissance invalide"
 PLIGG_Visual_Register_Error_NumSecuInvalid = "Numero sécurité sociale invalide"
