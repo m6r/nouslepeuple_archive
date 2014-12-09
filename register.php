@@ -181,7 +181,7 @@ function register_check_errors($username, $email, $password, $password2, $user_n
 	}
         $mois = "";
        //date de naissance
- 	if(!preg_match ( " \^([0-3][0-9]})(/)([0-9]{2,2})(/)([0-3]{2,2})$\ " , $user_datenaissance )) { // if user _datenaissance pas au bon format
+ 	if(!preg_match ( '^\d{1,2}/\d{1,2}/\d{4}$' , $user_datenaissance )) { // if user _datenaissance pas au bon format
 		$form_datenaissance_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_DateInvalid');
 		$error = true;
 	}
