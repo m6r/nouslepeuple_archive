@@ -175,14 +175,14 @@ function register_check_errors($username, $email, $password, $password2, $user_n
 	    }
 	} else {
 	    if (!preg_match('/^[^~`@%&=\\/;:\\.,<>!"\\\'\\^\\.\\[\\]\\$\\(\\)\\|\\*\\+\\-\\?\\{\\}\\\\]+$/', $user_prenom)) {
-		$form_prenom_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_NomInvalid');
+		$form_prenom_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_NomInvalid') ;
 		$error = true;
 	    }
 	}
         $mois = "";
        //date de naissance
  	if(!preg_match ( '^\d{1,2}/\d{1,2}/\d{4}$' , $user_datenaissance )) { // if user _datenaissance pas au bon format
-		$form_datenaissance_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_DateInvalid');
+		$form_datenaissance_error[] = $main_smarty->get_config_vars('PLIGG_Visual_Register_Error_DateInvalid')."date=".$user_datenaissance;
 		$error = true;
 	}
         else
